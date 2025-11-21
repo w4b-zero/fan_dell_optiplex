@@ -1,0 +1,15 @@
+[Unit]
+Description=DELL fan control
+ConditionVirtualization=no
+
+[Service]
+# -d = running as daemon (this parameter must set to run as service!)
+# -D = debug mode (use this only for testing!)
+# -V = verbose mode (use this only for testing!)
+ExecStart=/usr/bin/dell_fans.sh -d -V
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
