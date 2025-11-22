@@ -793,9 +793,9 @@ range5_temp_max=$((${TEMP_RANGE5_END} +1))
 	else
 		fan1_pwm_set="${fan1_target_pwm}"
 	fi	
-	cpu_text_msg="CPU_Temp: $t_color${current_cpu_temp}${reset_text}$t_color1°C${reset_text} ${cyan_text}(Δ+${temp_diff}°C)${reset_text}"
-	fan1_text_msg="CPU_FAN: ${b_cyan_text}${fan1_pwm_set}pwm${reset_text}/${b_cyan_text}${current_rpm_speed}rpm${reset_text}"
-	fan2_text_msg="CASE_FAN: ${b_cyan_text}${fan2_pwm_set}pwm${reset_text}/${b_cyan_text}${current_rpm_speed2}rpm${reset_text}"
+	cpu_text_msg="${white_text}CPU_Temp:${reset_text} $t_color${current_cpu_temp}${reset_text}$t_color1°C${reset_text} ${cyan_text}(Δ+${temp_diff}°C)${reset_text}"
+	fan1_text_msg="${white_text}CPU_FAN:${reset_text} ${b_cyan_text}${fan1_pwm_set}pwm${reset_text}/${b_cyan_text}${current_rpm_speed}rpm${reset_text}"
+	fan2_text_msg="${white_text}CASE_FAN:${reset_text} ${b_cyan_text}${fan2_pwm_set}pwm${reset_text}/${b_cyan_text}${current_rpm_speed2}rpm${reset_text}"
 	tM_msg="${cpu_text_msg} ${fan1_text_msg} ${fan2_text_msg}"
 	tM_log="CPU_Temp: ${current_cpu_temp}°C (Δ+${temp_diff}°C) FAN1: ${fan1_pwm_set}pwm/${current_rpm_speed}rpm FAN2: ${fan2_pwm_set}pwm/${current_rpm_speed2}rpm"
 	tModeDebug "0" "${tM_msg}" "${tM_log}"
@@ -1407,12 +1407,12 @@ main(){
 for i in "$@"; do
     case "$i" in
         -h|--help) 
-          NO_LOG=1
+          NO_LOG=true
           DisplayHelp
           exit 0
           ;;
         -v|--version)
-          NO_LOG=1
+          NO_LOG=true
           ShowVersion
           exit 0
           ;;
@@ -1424,10 +1424,10 @@ for i in "$@"; do
           NO_LOG_COLOR=true
           ;;
         --no_log)
-          NO_LOG=1
+          NO_LOG=true
           ;;
         -d|--daemon) 
-          DAEMON_MODE=1
+          DAEMON_MODE=true
           shift # past argument=value
           ;;
         -s|--silent)
@@ -1440,7 +1440,7 @@ for i in "$@"; do
           DEBUG_MODE=true
           ;;
         --use_logfile) 
-          USE_LOGFILE=1
+          USE_LOGFILE=true
           shift # past argument=value
           ;;
         -p=*|--checkpause=*) 

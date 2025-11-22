@@ -37,7 +37,7 @@ ConditionVirtualization=no
 # -d = running as daemon (this parameter must set to run as service!)
 # -D = debug mode (use this only for testing!)
 # -V = verbose mode (use this only for testing!)
-ExecStart=/usr/bin/dell_fans.sh -d -V
+ExecStart=/usr/bin/dell_fans.sh -d
 Restart=always
 RestartSec=5
 
