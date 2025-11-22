@@ -3,8 +3,10 @@
 A simple script for fan Dell Optiplex Computer
 with a option to use as a systemd service
 
+```
 inspired by: fan_control.sh script from Jose Manuel Hernandez Farias
              https://github.com/KaltWulx/fan_dell_optiplex
+```
              
 ## instructions to use the DELL fan control script
 
