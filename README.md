@@ -1,3 +1,5 @@
+# please use the new and better script from the original repository: https://github.com/KaltWulx/fan_dell_optiplex
+
 # DELL fan control
 
 A simple script for fan Dell Optiplex Computer
